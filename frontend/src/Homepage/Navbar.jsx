@@ -1,9 +1,23 @@
 import React from 'react'
 
+
 export default function Navbar() {
+
+  const PhoneNavbarIteams=(<>
+  <li>
+          <a>Our Services</a>
+          <ul class="p-2">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+          </ul>
+        </li>
+        <li><a>Your Team</a></li>
+        <li><a>Help&Support</a></li>
+  </>)
+
   return (
     <div>
-      <div>
+      <div className="md:px-10 px-4">
       <div class="navbar bg-base-100">
   <div class="navbar-start">
     <div class="dropdown">
@@ -24,20 +38,12 @@ export default function Navbar() {
       <ul
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        {PhoneNavbarIteams}
       </ul>
     </div>
-    <a class="text-2x1 font-bold cursor-pointer ">ExamHelper</a>
+    <a class="text-2x1 font-bold cursor-pointer ">QuestionFinder</a>
   </div>
-  <div class="navbar-center hidden lg:flex">
+  <div class="navbar-center hidden lg:flex space-x-4">
     <ul class="menu menu-horizontal px-1">
       <li>
         <details>
@@ -50,23 +56,24 @@ export default function Navbar() {
       </li>
     </ul>
     </div>
-    <div class="navbar-center">
-    <ul class="menu menu-horizontal px-4">
-      <li class="list list-hori">
-        <details>
-          <summary>Your Team</summary>
-          <ul class="p-2">
-            <li><a>See Group Member</a></li>
-            <li><a>Add New Member</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Help&Support</a></li>
+    <div class="navbar-center hidden lg:flex ">
+    <ul class="menu menu-horizontal px-4 custom-menu">
+        <li>
+            <details>
+                <summary>Your Team</summary>
+                <ul>
+                    <li><a>See Group Member</a></li>
+                    <li><a>Add New Member</a></li>
+                </ul>
+            </details>
+        </li>
+        <li><a>Help&Support</a></li>
     </ul>
   </div>
-  <div class="navbar-end">
-    <a class="btn">Login</a>
-    <ul class="menu menu-horizontal px-1">
+
+  <div class="navbar-end ">
+    <ul class="menu menu-horizontal px-1 space-x-3 ">
+    <li><a class="bg-black rounded-md text-white cursor-pointer ">Login</a></li>
       <li>
         <a>Your Profile</a>
       </li>
